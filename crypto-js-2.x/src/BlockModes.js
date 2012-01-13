@@ -2,7 +2,9 @@
  * Crypto-JS contribution from Simon Greatrix
  */
 
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Create pad namespace
 var C_pad = C.pad = {};
@@ -373,4 +375,4 @@ CTR_prototype._doEncrypt = function (cipher, m, iv) {
 };
 CTR_prototype._doDecrypt = CTR_prototype._doEncrypt;
 
-})(Crypto);
+})();

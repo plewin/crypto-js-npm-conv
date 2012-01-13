@@ -1,4 +1,6 @@
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Shortcuts
 var util = C.util,
@@ -112,4 +114,4 @@ var MARC4 = C.MARC4 = {
 
 };
 
-})(Crypto);
+})();

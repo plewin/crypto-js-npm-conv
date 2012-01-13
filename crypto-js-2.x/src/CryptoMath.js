@@ -1,4 +1,6 @@
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Shortcut
 var util = C.util;
@@ -32,4 +34,4 @@ util.lt = function (m, n) {
 	return this.u32(m) < this.u32(n);
 };
 
-})(Crypto);
+})();

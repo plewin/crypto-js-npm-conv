@@ -67,7 +67,7 @@ EOLINES
 
 # write readme for github
 cat > README.md <<\EOLINES
-* with little modification, converted from googlecode project "crypto-js":http://code.google.com/p/crypto-js/
+* with little modification, converted from googlecode project "crypto-js":http://code.google.com/p/crypto-js/ , and keep the source code structure of the origin project on googlecode
 * source code worked in both browser engines and node scripts. see also: "https://github.com/gwjjeff/crypto-js-npm-conv":https://github.com/gwjjeff/crypto-js-npm-conv
 * inspiration comes from "ezcrypto":https://github.com/ElmerZhang/ezcrypto , but my tests cannot pass with his version ( ECB/pkcs7 mode ), so I made it myself
 

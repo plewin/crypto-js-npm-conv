@@ -1,4 +1,6 @@
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Shortcuts
 var util = C.util,
@@ -44,4 +46,4 @@ C.PBKDF2 = function (password, salt, keylen, options) {
 
 };
 
-})(Crypto);
+})();

@@ -1,4 +1,6 @@
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Shortcuts
 var util = C.util,
@@ -153,4 +155,4 @@ MD5._blocksize = 16;
 
 MD5._digestsize = 16;
 
-})(Crypto);
+})();

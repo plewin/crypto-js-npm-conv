@@ -1,4 +1,6 @@
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Shortcuts
 var util = C.util,
@@ -125,4 +127,4 @@ SHA256._blocksize = 16;
 
 SHA256._digestsize = 32;
 
-})(Crypto);
+})();

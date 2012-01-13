@@ -1,4 +1,6 @@
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Shortcuts
 var util = C.util,
@@ -33,4 +35,4 @@ C.HMAC = function (hasher, message, key, options) {
 
 };
 
-})(Crypto);
+})();

@@ -1,4 +1,6 @@
-(function(C){
+(function(){
+
+var C = (typeof window === 'undefined') ? require('./Crypto').Crypto : window.Crypto;
 
 // Shortcuts
 var util = C.util,
@@ -216,4 +218,4 @@ var Rabbit = C.Rabbit = {
 
 };
 
-})(Crypto);
+})();
