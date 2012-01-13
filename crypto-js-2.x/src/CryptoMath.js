@@ -1,7 +1,7 @@
-(function(){
+(function(C){
 
 // Shortcut
-var util = Crypto.util;
+var util = C.util;
 
 // Convert n to unsigned 32-bit integer
 util.u32 = function (n) {
@@ -32,4 +32,4 @@ util.lt = function (m, n) {
 	return this.u32(m) < this.u32(n);
 };
 
-})();
+})(Crypto);
