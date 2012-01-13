@@ -3,10 +3,10 @@
  * http://www.itl.nist.gov/fipspubs/fip46-2.htm
  */
 
-(function() {
+(function(C) {
 
     // Shortcuts
-    var C = Crypto, util = C.util, charenc = C.charenc, UTF8 = charenc.UTF8;
+    var util = C.util, charenc = C.charenc, UTF8 = charenc.UTF8;
 
     /***************************************************************************
      * 
@@ -998,4 +998,4 @@
         }
 
     };
-})();
+})(Crypto);
