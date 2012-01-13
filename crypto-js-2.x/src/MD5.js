@@ -1,8 +1,7 @@
-(function(){
+(function(C){
 
 // Shortcuts
-var C = Crypto,
-    util = C.util,
+var util = C.util,
     charenc = C.charenc,
     UTF8 = charenc.UTF8,
     Binary = charenc.Binary;
@@ -154,4 +153,4 @@ MD5._blocksize = 16;
 
 MD5._digestsize = 16;
 
-})();
+})(Crypto);
