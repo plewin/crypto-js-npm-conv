@@ -1,8 +1,7 @@
-(function(){
+(function(C){
 
 // Shortcuts
-var C = Crypto,
-    util = C.util,
+var util = C.util,
     charenc = C.charenc,
     UTF8 = charenc.UTF8;
 
@@ -398,4 +397,4 @@ var AES = C.AES = {
 
 };
 
-})();
+})(C);
