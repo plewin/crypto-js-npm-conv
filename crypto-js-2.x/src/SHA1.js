@@ -1,8 +1,7 @@
-(function(){
+(function(C){
 
 // Shortcuts
-var C = Crypto,
-    util = C.util,
+var util = C.util,
     charenc = C.charenc,
     UTF8 = charenc.UTF8,
     Binary = charenc.Binary;
@@ -82,4 +81,4 @@ SHA1._blocksize = 16;
 
 SHA1._digestsize = 20;
 
-})();
+})(Crypto);
