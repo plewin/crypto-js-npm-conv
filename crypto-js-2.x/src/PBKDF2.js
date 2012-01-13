@@ -1,8 +1,7 @@
-(function(){
+(function(C){
 
 // Shortcuts
-var C = Crypto,
-    util = C.util,
+var util = C.util,
     charenc = C.charenc,
     UTF8 = charenc.UTF8,
     Binary = charenc.Binary;
@@ -45,4 +44,4 @@ C.PBKDF2 = function (password, salt, keylen, options) {
 
 };
 
-})();
+})(Crypto);
