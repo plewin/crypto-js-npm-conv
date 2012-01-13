@@ -5,7 +5,8 @@ if (typeof Crypto == "undefined" || ! Crypto.util)
 var base64map = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 
 // Global Crypto object
-var Crypto = window.Crypto = {};
+// with browser window or with node module
+var Crypto = (typeof window === 'undefined') ? exports.Crypto = {} : window.Crypto = {}; 
 
 // Crypto utilities
 var util = Crypto.util = {
