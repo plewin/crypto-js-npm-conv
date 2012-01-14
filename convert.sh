@@ -34,7 +34,7 @@ cat > package.json <<\EOLINES
     "type": "git",
     "url": "git://github.com/gwjjeff/cryptojs.git"
   },
-  "main": "index.js",
+  "main": "cryptojs.js",
   "engines": {
     "node": "*"
   },
@@ -45,7 +45,7 @@ EOLINES
 
 # write index.js
 # and merge Crypto with CryptoMath BlockModes DES AES HMAC MARC4 MD5 PBKDF2 PBKDF2Async Rabbit SHA1 SHA256
-cat > index.js <<\EOLINES
+cat > cryptojs.js <<\EOLINES
 var Crypto = exports.Crypto = require('./lib/Crypto').Crypto;
 
 [ 'CryptoMath'
@@ -103,7 +103,7 @@ EOLINES
 
 # write test file
 cat > test/test.coffee <<\EOLINES
-Crypto = (require 'cryptojs').Crypto
+Crypto = (require '../cryptojs').Crypto
 key = '12345678'
 us = 'Hello, 世界!'
 
