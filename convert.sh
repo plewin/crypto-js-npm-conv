@@ -5,7 +5,7 @@ echo create node module in $BASE_DIR
 cd $BASE_DIR
 
 APP_DIR=cryptojs
-SRC_DIR=crypto-js-2.x
+SRC_DIR=crypto-js-3.x
 
 # prepare node module structure
 mkdir -p $APP_DIR
@@ -13,7 +13,6 @@ cd $APP_DIR
 
 mkdir -p lib
 mkdir -p test
-touch index.js
 touch package.json
 touch README.md
 touch test/test.coffee
@@ -29,10 +28,10 @@ cat > package.json <<\EOLINES
   "tags": ["Hash", "MD5", "SHA1", "SHA-1", "SHA256", "SHA-256", "RC4", "Rabbit", "AES", "DES", "PBKDF2", "HMAC", "OFB", "CFB", "CTR", "CBC", "Base64"],
   "description": "Following googlecode project crypto-js, provide standard and secure cryptographic algorithms for NodeJS. Support MD5, SHA-1, SHA-256, RC4, Rabbit, AES, DES, PBKDF2, HMAC, OFB, CFB, CTR, CBC, Base64",
   "version": "2.5.3",
-  "homepage": "https://github.com/gwjjeff/cryptojs",
+  "homepage": "https://github.com/plewin/cryptojs",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gwjjeff/cryptojs.git"
+    "url": "git://github.com/plewin/cryptojs.git"
   },
   "main": "cryptojs.js",
   "engines": {
@@ -44,22 +43,42 @@ cat > package.json <<\EOLINES
 EOLINES
 
 # write index.js
-# and merge Crypto with CryptoMath BlockModes DES AES HMAC MARC4 MD5 PBKDF2 PBKDF2Async Rabbit SHA1 SHA256
+# and merge CryptoJS with rest
 cat > cryptojs.js <<\EOLINES
-var Crypto = exports.Crypto = require('./lib/Crypto').Crypto;
+var CryptoJS = exports.CryptoJS = require('./lib/core').CryptoJS;
 
-[ 'CryptoMath'
-, 'BlockModes'
-, 'DES'
-, 'AES'
-, 'HMAC'
-, 'MARC4'
-, 'MD5'
-, 'PBKDF2'
-, 'PBKDF2Async'
-, 'Rabbit'
-, 'SHA1'
-, 'SHA256'
+[ 'cipher-core'
+, 'x64-core'
+, 'aes'
+, 'enc-base64'
+, 'enc-utf16'
+, 'evpkdf'
+, 'format-hex'
+, 'hmac'
+, 'lib-typedarrays'
+, 'md5'
+, 'mode-cfb'
+, 'mode-ctr'
+, 'mode-ctr-gladman'
+, 'mode-ecb'
+, 'mode-ofb'
+, 'pad-ansix923'
+, 'pad-iso10126'
+, 'pad-iso97971'
+, 'pad-nopadding'
+, 'pad-zeropadding'
+, 'pbkdf2'
+, 'rabbit'
+, 'rabbit-legacy'
+, 'rc4'
+, 'ripemd160'
+, 'sha1'
+, 'sha3'
+, 'sha256'
+, 'sha224'
+, 'sha512'
+, 'sha384'
+, 'tripledes'
 ].forEach( function (path) {
 	require('./lib/' + path);
 });

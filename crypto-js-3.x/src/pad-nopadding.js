@@ -1,0 +1,12 @@
+var CryptoJS = (typeof window === 'undefined') ? require('./core').CryptoJS : window.CryptoJS;
+
+/**
+ * A noop padding strategy.
+ */
+CryptoJS.pad.NoPadding = {
+    pad: function () {
+    },
+
+    unpad: function () {
+    }
+};
